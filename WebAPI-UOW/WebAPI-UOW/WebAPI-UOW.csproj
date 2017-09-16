@@ -201,12 +201,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WebApiContext.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Repository\DbContextFactory.cs" />
-    <Compile Include="Models\Repository\IDbContextFactory.cs" />
+    <Compile Include="Models\Repository\ApiUnitOfWork.cs" />
     <Compile Include="Models\Repository\IRepository.cs" />
-    <Compile Include="Models\Repository\IUnitOfWork.cs" />
+    <Compile Include="Models\Repository\IApiUnitOfWork.cs" />
     <Compile Include="Models\Repository\Repository.cs" />
     <Compile Include="Models\Repository\UnitOfWork.cs" />
+    <Compile Include="Models\Services\UnityResolver.cs" />
+    <Compile Include="Models\Services\IPersonService.cs" />
+    <Compile Include="Models\Services\PersonService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

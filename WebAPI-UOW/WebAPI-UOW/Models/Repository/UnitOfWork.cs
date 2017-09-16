@@ -3,12 +3,12 @@ using System.Data.Entity;
 using System.Linq;
 
 namespace WebAPI_UOW.Models.Repository {
-    public class UnitOfWork : IUnitOfWork, IDisposable {
+    public class UnitOfWork {
         private readonly DbContext _dbContext;
         private bool _disposed;
 
-        public UnitOfWork(IDbContextFactory dbContextFactory) {
-            _dbContext = dbContextFactory.GetDbContext();
+        public UnitOfWork(DbContext context) {
+            _dbContext = context;
         }
 
         public void Dispose() {
@@ -25,7 +25,7 @@ namespace WebAPI_UOW.Models.Repository {
             _dbContext.SaveChanges();
         }
 
-        public void Dispose(bool disposing) {
+        private void Dispose(bool disposing) {
             if (!_disposed) if (disposing) _dbContext.Dispose();
             _disposed = true;
         }

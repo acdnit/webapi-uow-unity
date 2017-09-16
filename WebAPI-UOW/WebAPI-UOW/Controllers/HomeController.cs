@@ -1,15 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using WebAPI_UOW.Models.Services;
 
 namespace WebAPI_UOW.Controllers {
     public class HomeController : Controller {
-        public ActionResult Index() {
-            ViewBag.Title = "Home Page";
+        private readonly IPersonService _personService;
 
-            return View();
+        public HomeController(IPersonService personService) {
+            _personService = personService;
+        }
+
+        public ActionResult Index() {
+            var list = _personService.GetListPersion();
+            ViewBag.Title = "Home Page";
+            return View(list);
         }
     }
 }
