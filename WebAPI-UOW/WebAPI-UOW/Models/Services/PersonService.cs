@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
 using System.Threading.Tasks;
 using WebAPI_UOW.Models.Ef;
 using WebAPI_UOW.Models.Repository;
